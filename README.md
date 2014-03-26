@@ -193,6 +193,6 @@ This tool is perfect to find memory leaks in code handeling your requests. With 
 Excursion: Test-Driven Development of Android Applications
 ----------------------------------------------------------
 
-Have a look at the pdf CI_with_Android.pdf in this repository. 
+Have a look at the pdf `CI_with_Android.pdf` in this repository. 
 
-There is also more information about this topic at this location: https://github.com/friedolinfoerder/android-test
+There is more information about this topic at this location: https://github.com/friedolinfoerder/android-test
