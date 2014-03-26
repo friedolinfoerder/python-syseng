@@ -1,10 +1,16 @@
 System Engineering: Python
 ==========================
 
-Members
--------
-Friedolin Förder: ff026 
-Leon Schröder: ls066
+[Hochschule der Medien Stuttgart](http://www.hdm-stuttgart.de/)  
+[Studiengang Computer Science and Media](http://www.mi.hdm-stuttgart.de/csm)  
+WS 2013/2014
+
+Team:
+* Friedolin Förder ff026@hdm-stuttgart.de
+* Leon Schröder ls066@hdm-stuttgart.de
+
+Professor:  
+[Prof. Dr. Walter Kriha](http://kriha.de/)
  
 ...
 
@@ -183,3 +189,8 @@ Line #    Mem usage    Increment   Line Contents
 ```
 
 This tool is perfect to find memory leaks in code handeling your requests. With the use of `app.test_client()` it works seamlessly with the flask framework.
+
+Excursion: Test-Driven Development of Android Applications
+----------------------------------------------------------
+
+Have a look at https://github.com/friedolinfoerder/android-test
