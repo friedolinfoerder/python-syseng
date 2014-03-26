@@ -155,7 +155,7 @@ profiling()
 ```
 and the additional setting `-m memory_profiler` when starting the python interpreter
 ``` sh
-python -m memory_profiler memory_profile.py
+python -m memory_profiler profile_memory.py
 ```
 we can trigger the memory profiling and get this result:
 
