@@ -91,6 +91,11 @@ The line above runs all tests within the ```tests``` folder and generates Xunit 
 
 We created some bash scripts which are automatically run on our development server whenever we push any code changes to our git repository. The resulting code coverage reports [can be viewed following this link](http://109.230.231.200/werkbank/coverage/).
 
+Static Code Analysis
+--------------------
+Static code analysis can be done using the [pylint library](http://www.pylint.org/). It scans the source files without actually running them and generates reports indicating several metrics. As with the automated unit tests and coverage, we generate the pylint reports automatically on every git push. The resulting reports belonging to our morepeople project can be viewed here: http://109.230.231.200/werkbank/lint/
+
+
 Profiling
 ---------
 
