@@ -96,6 +96,11 @@ Static Code Analysis
 Static code analysis can be done using the [pylint library](http://www.pylint.org/). It scans the source files without actually running them and generates reports indicating several metrics. As with the automated unit tests and coverage, we generate the pylint reports automatically on every git push. The resulting reports belonging to our morepeople project can be viewed here: http://109.230.231.200/werkbank/lint/
 
 
+SonarQube
+---------
+All the techniques mentioned above are capable of generating reports in all usual data exchange formats (as well as HTML which can be viewed in the browser). Tools like [SonarQube](http://www.sonarqube.org/) aggregate such results and display them in a dashboard, providing an all-in-one overview. For example, this view nicely displays the results of ```pylint``` which where generated based on our morepeople server: http://109.230.231.200:9000/drilldown/issues/morepeople.server?severity=MAJOR
+
+
 Profiling
 ---------
 
