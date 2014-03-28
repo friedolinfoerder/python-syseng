@@ -49,6 +49,41 @@ The ``` setUp ``` method is called before each test case and it clears all entri
 
 The last method named ``` test_server_being_up ``` is the first very simple test case. It uses the test client to simulate a HTTP request to the root route ``` / ``` and checks if the response's status code is set to ```200```.
 
+The following test is a bit more sophisticated:
+
+``` python
+    def test_enqueue_user(self):
+        """ test_enqueue_user """
+        data = {
+            'USER_ID' : 'test_1234567',
+            'USER_NAME' : 'test__user',
+            'MATCH_TAG' : "beer",
+            'LOC': {'lng' : 40, 'lat' : 9 }
+            }
+
+        headers = [('Content-Type', 'application/json')]
+
+
+        # should not be there initially
+        self.assertTrue(self.server.queue.find_one(data) is None)
+
+        response = self.app.post('/queue', headers, data=json.dumps(data))
+
+        # should be there now
+        self.assertTrue(self.server.queue.find_one({'USER_ID' : data['USER_ID']}) is not None)
+```
+
+What happens here is that a request containing json data is sent to the ``` /queue ``` route. Instead of inspecting the response, we directly access the server application and assert that a new data entry has been created in the mongodb instance. This kind of test is very powerful, because we only need to access the interface of the Flask application (basically the REST routes) and can assert the correct functionality of the application by directly accessing the persistence layer.
+
+Automated Tests
+---------------
+The tests can be run by using the ```nose``` module. Nose will scan all subdirectories of the current working directory for python files. Classes which inherit from the ```unittest.TestCase ``` are then again scanned for methods beginning with "test" - for example ```test_enqueue_user```. Nose then runs these tests and collects the results.
+
+Nose can be called by simply typing ```nosetests```.
+
+Coverage
+--------
+The 
 
 Profiling
 ---------
