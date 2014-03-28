@@ -93,7 +93,13 @@ We created some bash scripts which are automatically run on our development serv
 
 Static Code Analysis
 --------------------
-Static code analysis can be done using the [pylint library](http://www.pylint.org/). It scans the source files without actually running them and generates reports indicating several metrics. As with the automated unit tests and coverage, we generate the pylint reports automatically on every git push. The resulting reports belonging to our morepeople project can be viewed here: http://109.230.231.200/werkbank/lint/
+Static code analysis can be done using the [pylint library](http://www.pylint.org/). It scans the source files without actually running them and generates reports indicating several metrics. The following command generates an HTML report for the ```server``` module and saves them in a file named ```index.html```:
+
+``` sh
+pylint --output-format=html server >> index.html
+```
+
+As with the automated unit tests and coverage, we generate the pylint reports automatically on every git push. The resulting reports belonging to our morepeople project can be viewed here: http://109.230.231.200/werkbank/lint/
 
 
 SonarQube
