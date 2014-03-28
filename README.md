@@ -12,7 +12,43 @@ Team:
 Professor:  
 [Prof. Dr. Walter Kriha](http://kriha.de/)
  
-...
+Unit Tests
+----------
+Unit tests can be easily written using the [unittest module](http://docs.python.org/2/library/unittest.html) of the Python standard library together with the [Flask Test Client](http://flask.pocoo.org/docs/testing/). Normally, the database / persistence layer should be mocked and only the interfaces of the components under test should be accessed from within the tests. But Flask server applications are very easy to test by directly accessing its routes using the test client while running the application in debug mode. In the following, we show how we incorporate a real mongodb instance, making our tests actually integration tests:
+
+``` python
+class FlaskAppTestCase(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(self):
+        os.environ['MORE_PEOPLE_DB'] = 'localhost'
+        os.environ['MORE_PEOPLE_DB_NAME'] = 'morepeople_testing'
+        os.environ['MORE_PEOPLE_LOG'] = 'morepeople_test.log'
+        import server        
+        self.server = server
+        # chooses testing config, i.e. in-memory db:
+        self.app = self.server.app.test_client()
+        
+    def setUp(self):
+        self.server.users.remove({})
+        self.server.queue.remove({})
+        self.server.tags.remove({})
+        self.server.lobbies.remove({})
+        self.server.matches.remove({})
+        self.server.evaluations.remove({})
+
+    def test_server_being_up(self):
+        """ Test if self.server.is up. """
+        response = self.app.get('/')
+        self.assertEqual(response.status_code, 200)
+```
+
+In the code above, we first set up the python module in the ```setUpClass``` method. Before the server module is imported, environment variables are set, so the application will access a defined mongodb instance. This is important when running the tests in an continuous integration environment: in no case should the tests access the production database.
+
+The ``` setUp ``` method is called before each test case and it clears all entries out of the mongodb collections.
+
+The last method named ``` test_server_being_up ``` is the first very simple test case. It uses the test client to simulate a HTTP request to the root route ``` / ``` and checks if the response's status code is set to ```200```.
+
 
 Profiling
 ---------
