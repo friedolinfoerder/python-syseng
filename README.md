@@ -79,11 +79,15 @@ Automated Tests
 ---------------
 The tests can be run by using the ```nose``` module. Nose will scan all subdirectories of the current working directory for python files. Classes which inherit from the ```unittest.TestCase ``` are then again scanned for methods beginning with "test" - for example ```test_enqueue_user```. Nose then runs these tests and collects the results.
 
-Nose can be called by simply typing ```nosetests```.
+Nose can be called by simply typing ```nosetests```. The test results can be saved in the [XUnit format ](http://en.wikipedia.org/wiki/XUnit) by adding the command line argument ``` --with-xunit ```.
 
 Coverage
 --------
-The 
+Nose ships with the [coverage package](https://pypi.python.org/pypi/coverage/3.7.1) and incorporates it additional command line arguments:
+
+``` nosetests --with-xunit --with-coverage --cover-package=server --cover-html --cover-html-dir=htmlcov tests```
+
+The line above runs all tests within the ```tests``` folder and generates Xunit results. Additionally, the coverage plugin is run by specifying the comman ```--with-coverage```. By also specifiying the package name which should be tests (in our case ```server ```), 3rd party libraries are not included in the test coverage analysis. The last two arguments ```--cover-html``` and ```--cover-html-dir=htmlcov``` simply state that the coverage results should be created as ```HTML```, into a directory called ```htmlcov```. 
 
 Profiling
 ---------
