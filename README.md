@@ -104,7 +104,7 @@ As with the automated unit tests and coverage, we generate the pylint reports au
 
 SonarQube
 ---------
-All the techniques mentioned above are capable of generating reports in all usual data exchange formats (as well as HTML which can be viewed in the browser). Tools like [SonarQube](http://www.sonarqube.org/) aggregate such results and display them in a dashboard, providing an all-in-one overview. For example, this view nicely displays the results of ```pylint``` which where generated based on our morepeople server: http://109.230.231.200:9000/drilldown/issues/morepeople.server?severity=MAJOR
+All the techniques mentioned above are capable of generating reports in all usual data exchange formats (as well as HTML which can be viewed in the browser). Tools like [SonarQube](http://www.sonarqube.org/) aggregate such results and display them in a dashboard, providing an all-in-one overview. For example, this view nicely displays the results of ```pylint``` which were generated based on our morepeople server: http://109.230.231.200:9000/drilldown/issues/morepeople.server?severity=MAJOR
 
 To automatically collect the test, coverage and linter results and put them into the SonarQube database, the so called ```sonar-runner``` is necessary. For each programming language, a separate plugin is needed. In this case, we use the [Python Plugin](http://docs.codehaus.org/display/SONAR/Python+Plugin).
 
