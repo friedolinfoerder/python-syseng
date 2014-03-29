@@ -12,8 +12,8 @@ Team:
 Professor:  
 [Prof. Dr. Walter Kriha](http://kriha.de/)
 
-Index
------
+Table of Contents
+-----------------
 
 * [Unit Tests](#unit-tests)
 * [Automated Tests](#automated-tests)
