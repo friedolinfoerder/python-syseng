@@ -87,7 +87,7 @@ Nose ships with the [coverage package](https://pypi.python.org/pypi/coverage/3.7
 
 ``` nosetests --with-xunit --with-coverage --cover-package=server --cover-html --cover-html-dir=htmlcov tests```
 
-The line above runs all tests within the ```tests``` folder and generates Xunit results. Additionally, the coverage plugin is run by specifying the comman ```--with-coverage```. By also specifiying the package name which should be tests (in our case ```server ```), 3rd party libraries are not included in the test coverage analysis. The last two arguments ```--cover-html``` and ```--cover-html-dir=htmlcov``` simply state that the coverage results should be created as ```HTML```, into a directory called ```htmlcov```. 
+The line above runs all tests within the ```tests``` folder and generates Xunit results. Additionally, the coverage plugin is run by specifying the command ```--with-coverage```. By also specifiying the package name which should be tests (in our case ```server ```), 3rd party libraries are not included in the test coverage analysis. The last two arguments ```--cover-html``` and ```--cover-html-dir=htmlcov``` simply state that the coverage results should be created as ```HTML```, into a directory called ```htmlcov```. 
 
 We created some bash scripts which are automatically run on our development server whenever we push any code changes to our git repository. The resulting code coverage reports [can be viewed following this link](http://109.230.231.200/werkbank/coverage/).
 
