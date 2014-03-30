@@ -12,6 +12,8 @@ Team:
 Professor:  
 [Prof. Dr. Walter Kriha](http://kriha.de/)
 
+Link to the reference project: https://github.com/schreon/morepeople-server
+
 Table of Contents
 -----------------
 
