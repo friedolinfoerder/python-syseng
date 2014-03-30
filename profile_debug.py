@@ -10,18 +10,18 @@ def copy_func(f, name=None):
         f.func_defaults, f.func_closure)
 
 for i, rule in enumerate(list(app.url_map.iter_rules())):
-	url = str(rule)
-	if url[:2] != '/_':
-		def define(uri):
-			def f():
-				print uri
-				with app.test_client() as client:
-					response = client.get(uri)
-					return Response('<body>'+response.data+'</body>')
+    url = str(rule)
+    if url[:2] != '/_':
+        def define(uri):
+            def f():
+                print uri
+                with app.test_client() as client:
+                    response = client.get(uri)
+                    return Response('<body>'+response.data+'</body>')
 
-			setattr(globals, 'dynamic_uri_'+str(i), copy_func(f, '/debug' + uri))
-			app.route('/debug' + uri)(getattr(globals, 'dynamic_uri_'+str(i)))
-		define(url)
+            setattr(globals, 'dynamic_uri_'+str(i), copy_func(f, '/debug' + uri))
+            app.route('/debug' + uri)(getattr(globals, 'dynamic_uri_'+str(i)))
+        define(url)
 '''
 
 # the toolbar is only enabled in debug mode:
@@ -47,5 +47,5 @@ app.config['DEBUG_TB_PANELS'] = [
 
 toolbar = DebugToolbarExtension(app)
 #dozer = Dozer(app)
-	
+    
 app.run()
