@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 
+"""
+The app for testing the different (push, memory, debug) profiling methods.
+This simple app will be used to show how to profile a flask app.
+
+@author Friedolin Förder
+@author Leon Schröder
+"""
+
 from flask import *
 from cProfile import Profile
 app = Flask(__name__)
