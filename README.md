@@ -123,6 +123,11 @@ All the techniques mentioned above are capable of generating reports in all usua
 
 To automatically collect the test, coverage and linter results and put them into the SonarQube database, the so called ```sonar-runner```, is necessary. For each programming language, a separate plugin is needed. In this case, we use the [Python Plugin](http://docs.codehaus.org/display/SONAR/Python+Plugin).
 
+Integration into Git
+--------------------
+The execution of automated unit tests, static code analysis and the transfer of the results to the SonarQube database can scheduled after every change to the code base. We developed a so called ```post-receive hook``` which starts another linux shellscript running in the background. The scripts are run whenever a developer pushes code changes to our git respository. The following script must be named ```post-receive``` and must be placed into the ```hooks``` folder of the git repository on the server:
+
+
 
 Profiling
 ---------
