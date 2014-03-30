@@ -128,7 +128,7 @@ Integration into Git
 The execution of automated unit tests, static code analysis and the transfer of the results to the SonarQube database can scheduled after every change to the code base. We developed a so called ```post-receive hook``` which starts another linux shellscript running in the background. The scripts are run whenever a developer pushes code changes to our git respository. The following script must be named ```post-receive``` and must be placed into the ```hooks``` folder of the git repository on the server:
 
 
-``` shell
+``` sh
 #!/bin/sh
 echo "Testing and deploying app."
 exec /path/to/repository/hooks/updaterepo.sh >&- 2>&- &
