@@ -249,7 +249,7 @@ To get a better understanding what's going within the application and to underst
 sudo apt-get install kcachegrind
 ```
 
-and convert the profile data to the right output format. We are doing this in the discribed automated profile creation process. The script `pyprof2calltree.py` provides all necessary tools to make the conversion. This is basicly how it works:
+and convert the profile data to the right output format. We are doing this in the discribed automated profile creation process. The script `pyprof2calltree.py` provides all necessary tools to make the conversion. This is basically how it works:
 
 ``` python
 from pyprof2calltree import convert
