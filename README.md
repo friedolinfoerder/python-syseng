@@ -243,7 +243,7 @@ How you can use a line profiler for profiling memory usage is described in the c
 
 ####Using kcachegrind to visualize the calltree
 
-To get a better understanding what's going within the application and to understand the flow and the performance impact of functions of your application, we used kcachegrind to visualize the call graph and the call map. To use kcachegrind you have to install it 
+To get a better understanding what's going on within the application and to understand the flow and the performance impact of functions of your application, we used kcachegrind to visualize the call graph and the call map. To use kcachegrind you have to install it 
 
 ``` sh
 sudo apt-get install kcachegrind
