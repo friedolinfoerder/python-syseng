@@ -30,7 +30,11 @@ Table of Contents
  
 Unit Tests
 ----------
-Unit tests can be easily written using the [unittest module](http://docs.python.org/2/library/unittest.html) of the Python standard library together with the [Flask Test Client](http://flask.pocoo.org/docs/testing/). Normally, the database / persistence layer should be mocked and only the interfaces of the components under test should be accessed from within the tests. But Flask server applications are very easy to test by directly accessing its routes using the test client while running the application in debug mode. In the following, we show how we incorporate a real mongodb instance, making our tests actually integration tests:
+Unit tests can be easily written using the [unittest module](http://docs.python.org/2/library/unittest.html) of the Python standard library together with the [Flask Test Client](http://flask.pocoo.org/docs/testing/). Normally, the database / persistence layer should be mocked and only the interfaces of the components under test should be accessed from within the tests. But Flask server applications are very easy to test by directly accessing its routes using the test client while running the application in debug mode. 
+
+As a reference, have a look at our [morepeople server](https://github.com/schreon/morepeople-server) which is based on these technologies.
+
+In the following, we show how we incorporate a real mongodb instance in our morepeople server tests, making them actually integration tests:
 
 ``` python
 class FlaskAppTestCase(unittest.TestCase):
