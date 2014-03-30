@@ -130,9 +130,29 @@ The execution of automated unit tests, static code analysis and the transfer of 
 
 ``` shell
 #!/bin/sh
-echo "Deploying app."
-exec /home/morepeople/server/hooks/updaterepo.sh >&- 2>&- &
+echo "Testing and deploying app."
+exec /path/to/repository/hooks/updaterepo.sh >&- 2>&- &
 ```
+
+As a convention, the git process running on the server will execute this script after code changes have been applied to the repository. The script starts another script named ```updaterepo.sh``` so that it runs in a separate process in the background. Here are the contents of ```updaterepo.sh```:
+
+``` sh
+
+#!/bin/sh
+rm -rf /path/to/test-folder/
+git clone /path/to/repository /path/to/test-folder/application-name
+cd /path/to/test-folder/application-name
+/path/to/virtualenv/bin/coverage erase
+/path/to/virtualenv/bin/nosetests -v --with-xunit --with-coverage --cover-erase --cover-package=server tests --cover-branches --cover-html --cover-html-dir=htmlcov --cover-xml --cover-xml-file=coverage.xml
+rm -rf /path/to/reports/htmlcov
+cp -R /path/to/test-folder/application-name/htmlcov /path/to/reports/htmlcov
+cd /path/to/test-folder/application-name
+/path/to/virtualenv/pylint --output-format=html server >> /path/to/reports/lint/index.html
+
+
+
+```
+
 Profiling
 ---------
 
