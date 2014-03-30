@@ -20,6 +20,7 @@ Table of Contents
 * [Coverage](#coverage)
 * [Static Code Analysis](#static-code-analysis)
 * [SonarQube](#sonarqube)
+* [Integration into Git](#integration-into-git)
 * [Profiling](#profiling)
   * [Creating profiling snapshots](#creating-profiling-snapshots)
   * [In detail profiling](#in-detail-profiling)
