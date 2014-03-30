@@ -336,7 +336,7 @@ This tool is perfect to find memory leaks in code handeling your requests. With 
 Excursion: Test-Driven Development of Android Applications
 ----------------------------------------------------------
 
-Have a look at the pdf `CI_with_Android.pdf` to get more information about this CI setup for Android:
+Have a look at the pdf [CI_with_Android.pdf](https://github.com/friedolinfoerder/python-syseng/raw/master/CI_with_Android.pdf) to get more information about this CI setup for Android:
 
 <p align='center'>
   <img src='http://friedolinfoerder.github.io/repos/python-syseng/images/CI_with_Android.png' />
