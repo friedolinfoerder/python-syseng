@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 from flask import *
 from cProfile import Profile

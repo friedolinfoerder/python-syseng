@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+
+"""
+File for live profiling.
+Go to a page and you will see the Flask Debug-toolbar.
+
+@author Friedolin Förder
+@author Leon Schröder
+"""
+
 from flask import *
 from flask_debugtoolbar import DebugToolbarExtension
 from dozer import Dozer
