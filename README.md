@@ -148,9 +148,6 @@ rm -rf /path/to/reports/htmlcov
 cp -R /path/to/test-folder/application-name/htmlcov /path/to/reports/htmlcov
 cd /path/to/test-folder/application-name
 /path/to/virtualenv/pylint --output-format=html server >> /path/to/reports/lint/index.html
-
-
-
 ```
 
 Profiling
